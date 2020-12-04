@@ -11,17 +11,39 @@ sidebar:
   nav: "docs"
 ---
 
+## Debugging Esri Server Connection Problems
+
+1. Test that you can ping Esri server from TRIRIGA server.
+Log into VM or computer running TRIRIGA and use the curl command to determine if the Esri server is reachable.
+
+1. Test that the proxy can access your Esri server.
+Using your web browser, browse to `https://YOUR-TRIRIGA-SERVER/html/en/default/rest/EsriIndoorMapsProxy?https://YOUR-ESRI-SERVER/portal/sharing/rest/portals/self?f=json&culture=en-us`.  This is successful if a JSON blob is returned that doesn't look like an error.
+
+1. Turn on logging by using `com.tririga.custom.EsriIndoorMapsProxy` as the class name through the TRIRIGA Admin UI.
+
 ## Common Problems
 
-1. {for @Troy} test that you can ping Esri server from TRIRIGA server
-2. {for @Troy} test url to test the esri proxy and pull back some content
-3. {for @Troy} how to list keys in a keystore to make sure that their certificats are valid
-`keytool -list -keystore key.p12 -storetype PKCS12  -v`
-4. {for @Troy} issues when the wrong mapid is used
-5. {for @Troy} issues when the wrong portal server url is used
-6. {for @Troy} issues when the wrong lat / long is used
+1. For certificate chaining errors seen in the logging output, you will have to add the certificates for the Esri server to the key stores.
+The certificates can be exported using a web browser. 
+They can be added to the cacerts file (in jre/lib/security directory) using commands as example:
+`mv cacerts cacerts.orig`
+`export PATH=$PATH:/opt/IBM/WebSphere/AppServer/java/8.0/jre/bin`
+`keytool -import -trustcacerts -alias WHATEVER-YOU-WANT -file SOME-EXPORTED-CERT.cer -keystore cacerts`
+If using Websphere Application Server, you have to add the certificate the CellDefaultTrustStore (in SSL certificate and key management > Key stores and certificates > CellDefaultTrustStore > Signer certificates).
 
+1. If you get "Failed to load portal item" message when using the Locate app, check the building info in TRIRIGA, specifically the `Esri Map ID` at the bottom of the form.  Check the Esri server for the ID for your building.
 
+1. If you get "Unable to load..." message when using the Locate app, check that the URL in `Esri Portal URL` on the building is correct.
+
+1. If you get "Failed to fetch" message when using the Locate app, check that the URL in `Esri Network URL` on the building is correct.
+
+1. If you get "User does not have permissions to access..." message when using the Locate app, check that the path in `Esri Network URL` on the building is correct.
+
+1. If the floorplan doesn't appear on the screen, check that the `Esri Building ID` on the building and `Esri Floor ID` on the floor are correct.
+
+1. If the map appears and is focused somewhere other than where the building is located, check that the `GIS Latitude` and `GIS Longitude` are correct.
+
+1. If the building rotation or zoom isn't ideal, then change the Zoom and Rotation properties on the building.  A zoom level of around 20 is typically good.
 
 ## Overview of Esri Components
 
