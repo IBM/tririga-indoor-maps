@@ -1,0 +1,27 @@
+docs:
+  - title: Getting Started
+    children:
+      - title: "Product Info"
+        url: /
+      - title: "Getting the Beta"
+        url: /beta/
+      - title: "Requirements"
+        url: /requirements/
+      - title: "Installing"
+        url: /installation/
+
+  - title: Advanced
+    children:
+      - title: "Configuration"
+        url: /configuring/
+      - title: "Upgrading"
+        url: /upgrading/
+      - title: "Uninstalling"
+        url: /uninstall/
+
+  - title: Support
+    children:
+      - title: "Troubleshooting"
+        url: /troubleshooting/
+      - title: "Changelog"
+        url: /changelog/

@@ -1,2 +1,2 @@
-# tririga-indoor-maps
-Add indoor wayfinding to TRIRIGA.
+
+The TRIRIGA Indoor Maps documentation can be found at https://ibm.github.io/tririga-indoor-maps
