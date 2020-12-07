@@ -45,6 +45,8 @@ If using Websphere Application Server, you have to add the certificate the CellD
 
 1. If the building rotation or zoom isn't ideal, then change the Zoom and Rotation properties on the building.  A zoom level of around 20 is typically good.
 
+1. If you find issues when selecting a room (real name doesn't appear, room description isn't correct, etc.), then check the ID of the space. The ID property is what is used to look up the space in Esri.
+
 ## Overview of Esri Components
 
 * [ArcGIS Indoors](https://www.esri.com/en-us/arcgis/products/arcgis-indoors/overview "ArcGIS Indoors Overview")
