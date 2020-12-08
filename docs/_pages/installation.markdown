@@ -17,20 +17,41 @@ Instructions to obtain the installation files will be provided with your email o
 ## Estimated time
 This installation should take 1-2 hours to complete.
 
-## Steps
-### Part 1 - OM Package
+## Install Steps
+#### A) Install Object Migration Package and modify out-of-the-box resources 
 1. Install the OM package `TRI_Esri_Indoor_Connector_vx.x.x.zip` to your TRIRIGA instance. This will create a new perceptive app named `triLocateMap`.
 
-2. To use this new app instead of the default Locate app, you need to make the following change on WorkplaceServices webview files. Note that by completing these steps, you will redirect traffic when you click on the `Locate` link on workplace services, the app displayed will be the new LocateMap app installed with the OM Package capable of integrating with Esri Indoors.  
+1. Add new LocateMap app to Workplace Services UI:
+   To use this new app instead of the default Locate app, you need to make the following change on WorkplaceServices webview files. Note that by completing these steps, you will redirect traffic when you click on the `Locate` link on workplace services, the app displayed will be the new LocateMap app installed with the OM Package capable of integrating with Esri Indoors.  
 
    1. Open `triview-workplace-services-dev.html` and change. ```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>``` to ```<tricore-url hidden raw-url="/p/web/locateMap" bind-url="{{locateMainUrl}}"></tricore-url>```  
    2. The files now must be vulcanized again. Follow the procedure described [here](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/IBM%20TRIRIGA1/page/How%20to%20vulcanize%20your%20UX%20application)
    
    Note that if you like to revert to the original Locate App, just change the `workplace-services-dev.html` file back to the original and vulcanize the files again.   
    
-3. TRIRIGA will need to be populated with data for each building and each floor that has indoor maps defined for them within Esri ArcGIS. On the record for buildings and floors there is a new section named `Esri Maps`.
+1. Add properties to triBuilding form:
+   1. Navigate to the Form Builder and Revise the triBuilding Form
+   1. Add a new tab named triEsriMaps with a Tab Label of Esri Maps and click Apply
+   1. On the new tab, add a new Section named triEsriMaps with a Tab Label of Esri Maps and click Apply
+   1. On this new section, add a new field. Select data field triEsriMapIdTX and click Apply
+   1. Select the new section again, and repeat step for the following fields:
+	  - triEsriBuildingIdTX
+	  - triEsriPortalUrl
+	  - triEsriNetworkUrl
+	  - triEsriZoomNU
+	  - triEsriRotationNU
+   1. After all changes are done, Publish the trBuilding Form.
 
-#### A) Buildings
+1. Add properties to the triFloor form:
+   1. On Form Builder, Revise the triFloor Form
+   1. Add a new tab named triEsriMaps with a Tab Label of Esri Maps and click Apply
+   1. On the new tab, add a new Section named triEsriMaps with a Tab Label of Esri Maps and click Apply
+   1. On this new section, add a new field. Select data field triEsriFloorIdTX and click Apply
+   1. Publish the triFloor Form.
+
+1. TRIRIGA will need to be populated with data for each building and each floor that has indoor maps defined for them within Esri ArcGIS. On the record for buildings and floors there is a new section named `Esri Maps`.
+
+#### B) Enabling Buildings
 
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/installation/esri-install-1-buildings.png)
 
@@ -48,7 +69,7 @@ This installation should take 1-2 hours to complete.
 
 **Note**: If not defined yet, `GIS Latitude` and `GIS Longitude` will need to be set for the building on the building form found in TRIRIGA inside the `Primary Address` section.
 
-#### B) Floors
+#### C) Enabling Floors
 
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/installation/esri-install-2-floors.png)
 
@@ -66,7 +87,7 @@ Floor:
 
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/installation/esri-install-4-floor-id.png)
 
-#### C) Esri User Setup
+#### D) Esri User Setup
 Create a task username and password within Esri ArcGIS Portal to be used for authentication by TRIRIGA
 
 for example:
@@ -75,7 +96,7 @@ username="tririga-maps"
 password="tririga-maps-secret"
 ```
 
-#### D) Configuring the Proxy
+#### E) Configuring the Proxy
 
 After installing the OM package for your TRIRIGA Maps integration, a new file named `proxy.config` will be created and needs to be populated with settings.
 
