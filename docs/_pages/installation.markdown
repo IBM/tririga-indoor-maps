@@ -59,7 +59,7 @@ This installation should take 1-2 hours to complete.
 
 **Esri Building ID:** ID that identifies this building on ArcGIS. Obtain this ID from the ArcGIS Pro.
 
-**Esri Building Default Zoom:** zoom level appropriate for the defined building. This value varries with the footprint of the building, but 20 is commonly sufficient for most buildings.
+**Esri Building Default Zoom:** zoom level appropriate for the defined building. This value varies with the footprint of the building, but 20 is commonly sufficient for most buildings.
 
 **Esri Building Default Rotation:** rotation appropriate for the defined building. This value defaults to 0, which corresponds to North at the top of the screen. However depending on the shape of the building you might want to rotate it for convenience. 
 
@@ -162,6 +162,6 @@ To add certs to the `cacerts` in the JRE please see the following [support docum
 To add certs to WAS refer to this [Knowledge Center Document](https://www.ibm.com/support/knowledgecenter/SSSHYH_6.1.0.2/com.ibm.netcoolimpact.doc_6.1.0.2/admin/imag_ewas_ssl.html)
 
 ## Install Verification
-* Launch the new enhanced Locate application `https://{hostname}:{port}/{context_root}//p/web/locatemap`
+* Launch the new enhanced Locate application `https://{hostname}:{port}/{context_root}/p/web/locatemap`
 * Select the building that has Esri Indoor Maps configured
 * You should see the enhanced UI with the Esri map in the Locate App
