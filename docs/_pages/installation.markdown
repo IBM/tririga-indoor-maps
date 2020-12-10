@@ -25,7 +25,7 @@ This installation should take 1-2 hours to complete.
    To use this new app instead of the default Locate app, you need to make the following change on WorkplaceServices webview files. Note that by completing these steps, you will redirect traffic when you click on the `Locate` link on workplace services, the app displayed will be the new LocateMap app installed with the OM Package capable of integrating with Esri Indoors.  
 
    1. Open `triview-workplace-services-dev.html` and change. ```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>``` to ```<tricore-url hidden raw-url="/p/web/locateMap" bind-url="{{locateMainUrl}}"></tricore-url>```  
-   2. The files now must be vulcanized again. Follow the procedure described [here](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/IBM%20TRIRIGA1/page/How%20to%20vulcanize%20your%20UX%20application)
+   1. The files now must be vulcanized again. Follow the procedure described [here](https://www.ibm.com/support/knowledgecenter/SSHEB3_3.7/pdfs_wiki/How_to_vulcanize_your_UX_application.pdf)
    
    Note that if you like to revert to the original Locate App, just change the `workplace-services-dev.html` file back to the original and vulcanize the files again.   
    
