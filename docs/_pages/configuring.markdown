@@ -11,4 +11,9 @@ sidebar:
   nav: "docs"
 ---
 
-## Header
+## Obtaining Esri Map ID
+
+1. Open a web browser
+1. Navigate to your Esri installations Portal e.g. https://host.domain/portal
+1. Click the Sign In on the top right of the landing page
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image1.png
