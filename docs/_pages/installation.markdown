@@ -161,6 +161,15 @@ To add certs to the `cacerts` in the JRE please see the following [support docum
 
 To add certs to WAS refer to this [Knowledge Center Document](https://www.ibm.com/support/knowledgecenter/SSSHYH_6.1.0.2/com.ibm.netcoolimpact.doc_6.1.0.2/admin/imag_ewas_ssl.html)
 
+#### F) Adding model to security group
+The OM package imported contains a new model for the UX app.  Non-admin users need to be given proper access to this model.  To accomplish this, you can either create a new security group or modify an existing.  The steps below modify the `TRIRIGA Request Central - Fundamentals` security group to allow users, that have this group, to read, update, create and delete the `triLocateMap` model.
+1.  From the TRIRIGA Main UI, go to `Tools > Adminstration > Security Manager`.
+2.  Click on the `TRIRIGA Request Central - Fundamentals` security group.
+3.  In the window appears, click on the `Access` tab.
+4.  Scroll down and expand the `Models` root and select `triLocateMap`.
+5.  In the "Model Access" panel on the right, select `Read,Update,Create and Delete`.
+6.  Click Save & Close.
+
 ## Install Verification
 * Launch the new enhanced Locate application `https://{hostname}:{port}/{context_root}/p/web/locatemap`
 * Select the building that has Esri Indoor Maps configured
