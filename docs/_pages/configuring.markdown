@@ -68,3 +68,26 @@ sidebar:
 1. Choose whichever Facility and Levels you need for the configuration - if this it was a campus that was published, there may be more than one facility defined in this layer but TRIRIGA works on a building by building basis, so choose the details for your current building.  
 1. The FACILITY_ID goes into the Esri Building ID field
 1. The LEVEL_ID goes into the Esri Floor ID field
+
+## Obtaining Esri Network URL
+1. Open a web browser
+1. Navigate to your Esri installations Portal e.g. https://host.domain/portal
+1. Click the Sign In on the top right of the landing page
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image1.png)
+1. Log in as admin or any user that is able to see the organisation's content
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image2.png)
+1. Select Content from the navigation bar at the top of the page
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image3.png)
+1. Select My Organisation on the navigation sub-bar
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image4.png)
+1. Filter the content by clicking Tools -> Network Analysis on the left hand side
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image18.png)
+1. Select the Network Analysis Service for your map - in grid view click on the title under the thumbnail (do not click the thumbnail itself or the map viewer will open instead).  Note assumes the content is displayed in Grid view below but the view  can be toggled at the top of the screen (List, Grid, Table).
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image19.png)
+1. On the details screen, click on the link to the navigation layer in the Layers section - in the example below the link is called TRIRIGA_Demo_Network
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image20.png)
+1. This opens a REST services descriptor which describes technical information about the navigation layer.  Click on the Route link in the Route Layers section
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image21.png)
+1. This opens another REST services descriptor which describes technical information about the route solver part of the navigation service.  Get the full URL in the browser's URL field.
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image22.png)
+1. The URL captured above should be entered into the Esri Navigation Url field
