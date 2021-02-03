@@ -10,11 +10,24 @@ description: How to configure TRIRIGA Indoor Maps for your IBM TRIRIGA solution.
 sidebar:
   nav: "docs"
 ---
+## Building and Floor fields to Esri ArcGIS values reference
+
+BO | Field | Example | Comment 
+------- | --------- | -------- | -------
+triBuilding | Esri Map ID (triEsriBuildingIdTX) | 403b6012276b4339af152e9c3319a4b1  | See instructions below.
+triBuilding | Esri Portal URL (triEsriPortalUrl) | https://host.domain/portal | URL determined during Esri installation.
+triBuilding | Esri Network URL (triEsriNetworkUrl) |  | See instructions below. 
+triBuilding | Esri Building ID (triEsriBuildingID) | NC_CHARLOTTE_ONE  | See instructions below.
+triFloor | Esri Floor ID (triEsriFloorID) | NC_CHARLOTTE_ONE.1  | See instructions below.
+triBuilding | Esri Building Default Zoom (triEsriZoomNU) | 20 | Depends on the footprint of the building - 20 is probably ok for most buildings however needs to be experimented with.
+triBuilding | Esri Building Default Rotation (triEsriRotationNU) | 90 |Depends on the shape of the building and the most common screen format people will view it in.  If the building is wider East to West it probably makes sense to rotate it 90 degrees.  Experiment with it to find the best value for the most common medium.
+
+
 
 ## Obtaining Esri Map ID
 
 1. Open a web browser.
-1. Navigate to your Esri installations Portal e.g. `https://host.domain/portal`
+1. Navigate to your Esri installation's Portal e.g. `https://host.domain/portal`
 1. Click the `Sign In` on the top right of the landing page.
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image1.png)
 1. Log in as `admin` or any user that is able to see the organisation's content.
@@ -31,8 +44,9 @@ sidebar:
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image7.png)
 
 ## Obtaining Esri Building ID & Esri Floor ID
+
 1. Open a web browser.
-1. Navigate to your Esri installations Portal e.g. `https://host.domain/portal`
+1. Navigate to your Esri installation's Portal e.g. `https://host.domain/portal`
 1. Click the `Sign In` on the top right of the landing page.
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image1.png)
 1. Log in as `admin` or any user that is able to see the organisation's content.
@@ -70,8 +84,9 @@ sidebar:
 1. The LEVEL_ID goes into the `Esri Floor ID` field.
 
 ## Obtaining Esri Network URL
+
 1. Open a web browser.
-1. Navigate to your Esri installations Portal e.g. `https://host.domain/portal`.
+1. Navigate to your Esri installation's Portal e.g. `https://host.domain/portal`.
 1. Click the `Sign In` on the top right of the landing page.
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/configuration/image1.png)
 1. Log in as `admin` or any user that is able to see the organisation's content.
