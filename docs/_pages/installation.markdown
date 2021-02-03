@@ -53,6 +53,8 @@ This installation should take 1-2 hours to complete.
 
 #### B) Enabling Buildings
 
+See [configuration page]({{ site.url }}{{ site.baseurl }}/configuring) for more details on the following.
+
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/installation/esri-install-1-buildings.png)
 
 **Esri Map ID:** Which web map to load from the ArcGIS server. Obtain this ID from the ArcGIS Portal.

@@ -14,13 +14,15 @@ sidebar:
 
 BO | Field | Comment 
 ------- | --------- | -------- 
-triBuilding | Esri Map ID (triEsriMapIdTX) | See instructions below.
-triBuilding | Esri Portal URL (triEsriPortalUrl) | URL determined during Esri installation. (Ex. https://host.domain/portal)
-triBuilding | Esri Network URL (triEsriNetworkUrl) | See instructions below. 
-triBuilding | Esri Building ID (triEsriBuildingID) | See instructions below. (Ex. NC_CHARLOTTE_ONE)
-triFloor | Esri Floor ID (triEsriFloorID) | See instructions below. (Ex. NC_CHARLOTTE_ONE.1)
-triBuilding | Esri Building Default Zoom (triEsriZoomNU) | Depends on the footprint of the building - 20 is probably ok for most buildings however needs to be experimented with.
-triBuilding | Esri Building Default Rotation (triEsriRotationNU) | Depends on the shape of the building and the most common screen format people will view it in.  If the building is wider East to West it probably makes sense to rotate it 90 degrees.  Experiment with it to find the best value for the most common medium.
+triBuilding | GIS Latitude (triGisLatitudeNU) | Existing field.  Should be know otherwise easily obtained by Googling the address and looking in the URL. May have to tweak slightly to get to the preferred position.
+triBuilding | GIS Longitude (triGisLongitudeNU) | Existing field.  Should be know otherwise easily obtained by Googling the address and looking in the URL. May have to tweak slightly to get to the preferred position.
+triBuilding | Esri Map ID (triEsriMapIdTX) | New field. See installation instructions for adding. See instructions below for configuring. (Ex. 403b6012276b4339af152e9c3319a4b1)
+triBuilding | Esri Portal URL (triEsriPortalUrl) | New field. See installation instructions for adding.  URL determined during Esri installation. (Ex. https://host.domain/portal)
+triBuilding | Esri Network URL (triEsriNetworkUrl) | New field. See installation instructions for adding.  See instructions below for configuring. 
+triBuilding | Esri Building ID (triEsriBuildingID) | New field. See installation instructions for adding.  See instructions below for configuring. (Ex. NC_CHARLOTTE_ONE)
+triFloor | Esri Floor ID (triEsriFloorID) | New field. See installation instructions for adding.  See instructions below for configuring. (Ex. NC_CHARLOTTE_ONE.1)
+triBuilding | Esri Building Default Zoom (triEsriZoomNU) | New field. See installation instructions for adding.  Depends on the footprint of the building - 20 is probably ok for most buildings however needs to be experimented with.
+triBuilding | Esri Building Default Rotation (triEsriRotationNU) | New field. See installation instructions for adding.  Depends on the shape of the building and the most common screen format people will view it in.  If the building is wider East to West it probably makes sense to rotate it 90 degrees.  Experiment with it to find the best value for the most common medium.
 
 
 
