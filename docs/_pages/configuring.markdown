@@ -14,8 +14,8 @@ sidebar:
 
 BO | Field | Comment 
 ------- | --------- | -------- 
-triBuilding | GIS Latitude (triGisLatitudeNU) | Existing field.  Should be know otherwise easily obtained by Googling the address and looking in the URL. May have to tweak slightly to get to the preferred position.
-triBuilding | GIS Longitude (triGisLongitudeNU) | Existing field.  Should be know otherwise easily obtained by Googling the address and looking in the URL. May have to tweak slightly to get to the preferred position.
+triBuilding | GIS Latitude (triGisLatitudeNU) | Existing field.  Should be known otherwise easily obtained by Googling the address and looking in the URL. May have to tweak slightly to get to the preferred position.
+triBuilding | GIS Longitude (triGisLongitudeNU) | Existing field.  Should be known otherwise easily obtained by Googling the address and looking in the URL. May have to tweak slightly to get to the preferred position.
 triBuilding | Esri Map ID (triEsriMapIdTX) | New field. See installation instructions for adding. See instructions below for configuring. (Ex. 403b6012276b4339af152e9c3319a4b1)
 triBuilding | Esri Portal URL (triEsriPortalUrl) | New field. See installation instructions for adding.  URL determined during Esri installation. (Ex. https://host.domain/portal)
 triBuilding | Esri Network URL (triEsriNetworkUrl) | New field. See installation instructions for adding.  See instructions below for configuring. 
