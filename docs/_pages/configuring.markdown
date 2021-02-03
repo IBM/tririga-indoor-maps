@@ -14,7 +14,7 @@ sidebar:
 
 BO | Field | Comment 
 ------- | --------- | -------- 
-triBuilding | Esri Map ID (triEsriBuildingIdTX) | See instructions below.
+triBuilding | Esri Map ID (triEsriMapIdTX) | See instructions below.
 triBuilding | Esri Portal URL (triEsriPortalUrl) | URL determined during Esri installation. (Ex. https://host.domain/portal)
 triBuilding | Esri Network URL (triEsriNetworkUrl) | See instructions below. 
 triBuilding | Esri Building ID (triEsriBuildingID) | See instructions below. (Ex. NC_CHARLOTTE_ONE)
