@@ -106,11 +106,11 @@ password="tririga-maps-secret"
 
 #### E) Configuring the Proxy
 
-After installing the OM package for your TRIRIGA Maps integration, a new file named `proxy.config` will be created and needs to be populated with settings.
+After installing the OM package for your TRIRIGA Maps integration, a new file named `tokenfetcher.config` will be created and needs to be populated with settings.
 
-The file can be obtained from within TRIRIGA's dashboard by clicking `Tools > System Setup > ClassLoader > EsriIndoorMapsProxy > proxy.config` and clicking the download button.
+The file can be obtained from within TRIRIGA's dashboard by clicking `Tools > System Setup > System > Class Loader > EsriIndoorMapsTokenFetcher > tokenfetcher.config` and clicking the download button.
 
-An example of how this file should be configured is displayed below. In this example, the ESRI server (where the esri map is located) is defined as `https://your-mapping-server.ibm.com`. (please note that that if your server has an additional context root it must be included before `/portal` in the example below)
+An example of how this file should be configured is displayed below. In this example, the ESRI server (where the esri map is located) is defined as `https://your-mapping-server.ibm.com/portal`. (please note that that if your server has an additional context root it must be included before `/portal` in the example below)
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -119,7 +119,7 @@ An example of how this file should be configured is displayed below. In this exa
                 logLevel="INFO"
                 mustMatch="true">
   <serverUrls>
-        <serverUrl url="https://your-mapping-server.ibm.com"
+        <serverUrl url="https://your-mapping-server.ibm.com/portal"
             username="$REPLACE_THIS_USERNAME"
             password="$REPLACE_THIS_PASSWORD"
             tokenServiceUri="https://your-mapping-server.ibm.com/portal/sharing/rest/generateToken"
