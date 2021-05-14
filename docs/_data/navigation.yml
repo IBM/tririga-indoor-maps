@@ -9,6 +9,10 @@ docs:
         url: /requirements/
       - title: "Installing"
         url: /installation/
+      - title: "TRIRIGA Set Up"
+        url: /install-tririga/
+      - title: "Esri Set Up"
+        url: /install-esri/
 
   - title: Advanced
     children:
