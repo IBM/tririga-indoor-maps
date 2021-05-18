@@ -55,9 +55,21 @@ This installation should take 1-2 hours to complete.
    1. Go back to the Form Builder and click on the radio button for the `triFloor` form.
    1. Click the `Publish` link from the links at the top right.
 
-1. TRIRIGA will need to be populated with data for each building and each floor that has indoor maps defined for them within Esri ArcGIS. On the record for buildings and floors there is a new tab named `triEsriMaps`.
+
+1. Modify existing Locate UX app to open new LocateMap UX app.
+   1. Navigate to the Web View Designer (Tools > Web View Designer).
+   1. Click on `triapp-location-context`.
+   1. Click on `tricomp-location-context.html`.
+   1. Click on the `Download View File` icon.
+   1. Edit the `tricomp-location-contexthtml` file downloaded.
+   1. Search for this line of code `this.fire("select-building", {building: finalBuilding});`.
+   1. Add this line of code below it `this.fire("refresh-building", {newBuildingId: newBuilding._id});`.
+   1. Click on the `Upload View File` icon and choose the file you just edited.
+   1. Click `Save & Close` link from the links at the top right.
 
 #### B) Enabling Buildings
+
+TRIRIGA will need to be populated with data for each building and each floor that has indoor maps defined for them within Esri ArcGIS. On the record for buildings and floors there is a new tab named `triEsriMaps`.
 
 See [configuration page]({{ site.url }}{{ site.baseurl }}/configuring) for more details on the following.
 
