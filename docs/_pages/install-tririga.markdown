@@ -28,7 +28,7 @@ This installation should take 1-2 hours to complete.
    {% raw %}```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>``` to ```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>```{% endraw %} 
    with 
    {% raw %}```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>``` to ```<tricore-url hidden raw-url="/p/web/locateMap" bind-url="{{locateMainUrl}}"></tricore-url>```{% endraw %} 
-   1. The Workplace Services production file will have to be vulcanized againg. If you wish to do this now, follow the procedure described [here](https://www.ibm.com/support/knowledgecenter/SSHEB3_3.7/pdfs_wiki/How_to_vulcanize_your_UX_application.pdf).  Vulcanization can be difficult on your first time, so if you don't want to do that just now, you can set the Production Filename to be the same as the Development Filename (i.e. set Production Filename to `triview-workplace-services-dev`) and carry on with the instructions below.
+   1. The Workplace Services production file will have to be vulcanized again. If you wish to do this now, follow the procedure described [here](https://www.ibm.com/support/knowledgecenter/SSHEB3_3.7/pdfs_wiki/How_to_vulcanize_your_UX_application.pdf).  Vulcanization can be difficult on your first time, so if you don't want to do that just now, you can set the Production Filename to be the same as the Development Filename (i.e. set Production Filename to `triview-workplace-services-dev`) and carry on with the instructions below.
    
 1. Add `triEsriMaps` tab to the `triBuilding` form:
    1. Navigate to the Form Builder (Tools > Form Builder).
@@ -56,7 +56,7 @@ This installation should take 1-2 hours to complete.
    1. Click the `Publish` link from the links at the top right.
 
 
-1. Modify existing Locate UX app to open new LocateMap UX app.
+1. Modify existing Locate UX app's location context component to open new LocateMap UX app.
    1. Navigate to the Web View Designer (Tools > Web View Designer).
    1. Click on `triapp-location-context`.
    1. Click on `tricomp-location-context.html`.
@@ -66,6 +66,43 @@ This installation should take 1-2 hours to complete.
    1. Add this line of code below it `this.fire("refresh-building", {newBuildingId: newBuilding._id});`.
    1. Click on the `Upload View File` icon and choose the file you just edited.
    1. Click `Save & Close` link from the links at the top right.
+
+1. Modify existing Locate UX app to open new LocateMap UX app.
+   1. Navigate to the Web View Designer (Tools > Web View Designer).
+   1. Click on `triLocate`.
+   1. Click on `triview-locate-dev.html`.
+   1. Click on the `Download View File` icon.
+   1. Edit the `triview-locate-devhtml` file downloaded.
+   1. Search for this line of code `listeners:`.
+   1. Add the following code BEFORE the listeners line:
+
+      ```
+      observers: [ "_checkEsriStatus(_buildingLookup)", ],
+
+      _checkEsriStatus: function(e) { 
+         if (this.overrideBuildingId != "" && this._buildingLookup[0] && this._buildingLookup[0].esriMapId) {
+            this._isEsriMapAvailable = false;
+            var currentUrl = window.location.href;
+            var newUrl = currentUrl.substring(0,currentUrl.indexOf("overrideBuildingId=") + 19) + this._buildingLookup[0].buildingRecordId;
+            newUrl = newUrl.replace("locate", "locateMap");
+            window.location.href = newUrl;
+         } else {
+            this._isEsriMapAvailable = false;
+         }
+      },
+
+      _refreshBuilding: function(e) {
+         this.overrideBuildingId = e.detail.newBuildingId;
+         this._checkEsriStatus(e);
+      },
+      ```
+
+   1. Click on the `Upload View File` icon and choose the file you just edited.
+   1. Click `Save & Close` link from the links at the top right.
+   1. Click in the `Production Filename` field back in the "Web View Metata data triLocate-triLocate" page.
+   1. Change the filename value to be `triview-locate-dev`.
+      Note: Switching the production filename to be the same as the development filename should be used for testing.  For production, you will want to re-vulcanize the web view which will put these changes in the `triview-locate.html` file. 
+
 
 #### B) Enabling Buildings
 
