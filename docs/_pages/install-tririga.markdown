@@ -70,9 +70,9 @@ This installation should take 1-2 hours to complete.
 1. Modify existing Locate UX app to open new LocateMap UX app.
    1. Navigate to the Web View Designer (Tools > Web View Designer).
    1. Click on `triLocate`.
-   1. Click on `triview-locate-dev.html`.
+   1. Click on `triview-locate-dev.js`.
    1. Click on the `Download View File` icon.
-   1. Edit the `triview-locate-devhtml` file downloaded.
+   1. Edit the `triview-locate-devjs` file downloaded.
    1. Search for this line of code `listeners:`.
    1. Add the following code BEFORE the listeners line:
 
