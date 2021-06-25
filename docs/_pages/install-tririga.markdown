@@ -55,6 +55,25 @@ This installation should take 1-2 hours to complete.
    1. Go back to the Form Builder and click on the radio button for the `triFloor` form.
    1. Click the `Publish` link from the links at the top right.
 
+1. In order to link the existing Locate app with the new LocateMap app, you must first add a data source to the existing triLocate model.
+   1. Navigate to the Model Designer (Tools > Model Designer).
+   1. Search for `triLocate`.
+   1. Add a new Data Source with the following values:
+      1. Name: `Building Lookup`
+      1. Exposed Name: `buildingLookup`
+      1. Data Source Type: `Query`
+      1. Multiple Records: `TRUE`
+      1. Module: `Location`
+      1. Business Object: `triBuilding`
+      1. Query Name: `triBuilding - UX - LocateMap - Building`
+   1. On this data source, add a field:
+      1. Name: `Building Record ID`
+      1. Exposed Name: `buildingRecordId`
+      1. Field Name: `Building Record ID`
+   1. Also on this data source, add another field:
+      1. Name: `Esri Map ID`
+      1. Exposed Name: `esriMapId`
+      1. Field Name: `Esri Map ID`
 
 1. Modify existing Locate UX app's location context component to open new LocateMap UX app.
    1. Navigate to the Web View Designer (Tools > Web View Designer).
@@ -70,15 +89,35 @@ This installation should take 1-2 hours to complete.
 1. Modify existing Locate UX app to open new LocateMap UX app.
    1. Navigate to the Web View Designer (Tools > Web View Designer).
    1. Click on `triLocate`.
-   1. Click on `triview-locate-dev.js`.
+   1. Click on `trimain-locate.js`.
    1. Click on the `Download View File` icon.
-   1. Edit the `triview-locate-devjs` file downloaded.
+   1. Edit the `trimain-locatejs` file downloaded.
+   1. Search for `</style>`.
+   1. Add the following lines of code AFTER the `</style>` line:
+
+      ```
+      <triplat-ds id="buildingLookup" name="buildingLookup" filtered-data="{{_buildingLookup}}">
+         <triplat-query>
+            <triplat-query-filter name="buildingRecordId" operator="equals" value="[[overrideBuildingId]]" ignore-if-blank>
+            </triplat-query-filter>
+         </triplat-query>
+      </triplat-ds>
+      ```
    1. Search for this line of code `listeners:`.
-   1. Add the following code BEFORE the listeners line:
+   1. BEFORE the listeners section, add this line of code:
 
       ```
       observers: [ "_checkEsriStatus(_buildingLookup)", ],
+      ```
+   1. INSIDE the listeners section, add this line of code:
 
+      ```
+      'refresh-building': '_refreshBuilding'
+      ```
+   
+   1. AFTER the listeners section, add this block of code:
+
+      ```
       _checkEsriStatus: function(e) { 
          if (this.overrideBuildingId != "" && this._buildingLookup[0] && this._buildingLookup[0].esriMapId) {
             this._isEsriMapAvailable = false;
@@ -99,9 +138,23 @@ This installation should take 1-2 hours to complete.
 
    1. Click on the `Upload View File` icon and choose the file you just edited.
    1. Click `Save & Close` link from the links at the top right.
-   1. Click in the `Production Filename` field back in the "Web View Metata data triLocate-triLocate" page.
-   1. Change the filename value to be `triview-locate-dev`.
-      Note: Switching the production filename to be the same as the development filename should be used for testing.  For production, you will want to re-vulcanize the web view which will put these changes in the `triview-locate.html` file. 
+
+1. Bundle up the triLocate app by performing the following steps:  (You'll need NodeJS installed.  See https://nodejs.org for instructions.)
+   1. Download and install the @tririga/tri-bundler tool using `npm install @tririga/tri-bundler -g`.
+   1. Download and install the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`.
+   1. Pull all the files for triview-locate from your TRIRIGA instance using following command:
+
+      ```
+      tri-pull -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate -d triLocate`
+      ```
+
+   1. Bundle the files for triview-locate using the following command:
+
+      ```
+      tri-bundler --url URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate --component triview-locate-dev.js --output triLocate/triview-locate.js`
+      ```
+   1. If you have difficulties with the above tools, more information about them can be found at https://www.npmjs.com/package/@tririga/tri-pull and https://www.npmjs.com/package/@tririga/tri-bundler.  
+
 
 
 #### B) Enabling Buildings
