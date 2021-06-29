@@ -94,7 +94,6 @@ This installation should take 1-2 hours to complete.
    1. Edit the `trimain-locatejs` file downloaded.
    1. Search for `</style>`.
    1. Add the following lines of code AFTER the `</style>` line:
-
       ```
       <triplat-ds id="buildingLookup" name="buildingLookup" filtered-data="{{_buildingLookup}}">
          <triplat-query>
@@ -105,18 +104,15 @@ This installation should take 1-2 hours to complete.
       ```
    1. Search for this line of code `listeners:`.
    1. BEFORE the listeners section, add this line of code:
-
       ```
       observers: [ "_checkEsriStatus(_buildingLookup)", ],
       ```
    1. INSIDE the listeners section, add this line of code:
-
       ```
-      'refresh-building': '_refreshBuilding'
+      'refresh-building': '_refreshBuilding',
       ```
-   
+      (Note, a comma has been added to the end of the above line, so add in the middle of the listeners.)
    1. AFTER the listeners section, add this block of code:
-
       ```
       _checkEsriStatus: function(e) { 
          if (this.overrideBuildingId != "" && this._buildingLookup[0] && this._buildingLookup[0].esriMapId) {
@@ -135,25 +131,26 @@ This installation should take 1-2 hours to complete.
          this._checkEsriStatus(e);
       },
       ```
-
    1. Click on the `Upload View File` icon and choose the file you just edited.
    1. Click `Save & Close` link from the links at the top right.
 
 1. Bundle up the triLocate app by performing the following steps:  (You'll need NodeJS installed.  See https://nodejs.org for instructions.)
    1. Download and install the @tririga/tri-bundler tool using `npm install @tririga/tri-bundler -g`.
    1. Download and install the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`.
+   1. Download and install the tri-deploy NodeJS tool using `npm install @tririga/tri-deploy -g`.
    1. Pull all the files for triview-locate from your TRIRIGA instance using following command:
-
       ```
       tri-pull -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate -d triLocate`
       ```
-
    1. Bundle the files for triview-locate using the following command:
-
       ```
       tri-bundler --url URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate --component triview-locate-dev.js --output triLocate/triview-locate.js`
       ```
-   1. If you have difficulties with the above tools, more information about them can be found at https://www.npmjs.com/package/@tririga/tri-pull and https://www.npmjs.com/package/@tririga/tri-bundler.  
+   1. Deploy the bundled file using the following command:
+      ```
+      tri-deploy -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate -d triLocate --files triview-locate.js
+      ```
+   1. If you have difficulties with the above tools, more information about them can be found at https://www.npmjs.com/package/@tririga/tri-pull, https://www.npmjs.com/package/@tririga/tri-bundler, and https://www.npmjs.com/package/@tririga/tri-deploy.  
 
 
 
