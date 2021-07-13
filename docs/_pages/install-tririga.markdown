@@ -32,7 +32,8 @@ This installation should take 1-2 hours to complete.
    with 
    {% raw %}```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>``` to ```<tricore-url hidden raw-url="/p/web/locateMap" bind-url="{{locateMainUrl}}"></tricore-url>```{% endraw %} 
    1. Upload the edited file by clicking the `Upload View File` icon and picking the edited file.
-   1. The Workplace Services production file can be vulcanized with this change now or later. If you don't wish to do this now, you can set the Production Filename to be the same as the Development Filename (i.e. set Production Filename to `triview-workplace-services-dev`) and carry on.  If you want to do vulcaniztion now, then follow these steps:
+   1. Click `Save & Close` to save the edited file.
+   1. The Workplace Services production file can be vulcanized with this change now or later. If you don't wish to do this now, you can change the Production Filename to be the same as the Development Filename (i.e. set Production Filename to `triview-workplace-services-dev`) and click `Save & Close` on the web view.  If you want to do vulcaniztion now, then follow these steps:
       1. Install NodeJS from [https://nodejs.org](https://nodejs.org).
       1. Download and install the @tririga/tri-vulcanize tool using `npm install @tririga/tri-vulcanize -g`.
       1. Download and install the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`.
