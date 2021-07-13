@@ -9,7 +9,7 @@ description: How to configure TRIRIGA Indoor Maps to be used via a kiosk.
 
 sidebar:
   nav: "docs"
---
+---
 
 ## Configuring TRIRIGA Indoor Maps for kiosks
 
