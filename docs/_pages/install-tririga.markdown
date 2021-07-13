@@ -24,11 +24,31 @@ This installation should take 1-2 hours to complete.
 1. Add new LocateMap app to Workplace Services UI:
    To use this new app instead of the default Locate app, you need to make the following change on WorkplaceServices webview files. Note that by completing these steps, you will redirect traffic when you click on the `Locate` link on workplace services, the app displayed will be the new LocateMap app installed with the OM Package capable of integrating with Esri Indoors.  
 
-   1. Open `triview-workplace-services-dev.html` and replace the line 
-   {% raw %}```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>``` to ```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>```{% endraw %} 
+   1. Navigate to the Web View Designer (Tools > Web View Designer).
+   1. Click on `triWorkplaceServices` web view.
+   1. Click on `triview-workplace-services-dev.html` view file.
+   1. Click on the `Download View File` icon.
+   1. Edit the downloaded `triview-workplace-services-devhtml` file and replace the line 
    with 
    {% raw %}```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>``` to ```<tricore-url hidden raw-url="/p/web/locateMap" bind-url="{{locateMainUrl}}"></tricore-url>```{% endraw %} 
-   1. The Workplace Services production file will have to be vulcanized again. If you wish to do this now, follow the procedure described [here](https://www.ibm.com/support/knowledgecenter/SSHEB3_3.7/pdfs_wiki/How_to_vulcanize_your_UX_application.pdf).  Vulcanization can be difficult on your first time, so if you don't want to do that just now, you can set the Production Filename to be the same as the Development Filename (i.e. set Production Filename to `triview-workplace-services-dev`) and carry on with the instructions below.
+   1. Upload the edited file by clicking the `Upload View File` icon and picking the edited file.
+   1. The Workplace Services production file can be vulcanized with this change now or later. If you don't wish to do this now, you can set the Production Filename to be the same as the Development Filename (i.e. set Production Filename to `triview-workplace-services-dev`) and carry on.  If you want to do vulcaniztion now, then follow these steps:
+      1. Install NodeJS from [https://nodejs.org](https://nodejs.org).
+      1. Download and install the @tririga/tri-vulcanize tool using `npm install @tririga/tri-vulcanize -g`.
+      1. Download and install the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`.
+      1. Download and install the tri-deploy NodeJS tool using `npm install @tririga/tri-deploy -g`.
+      1. Pull all the files for triview-workplace-services from your TRIRIGA instance using following command:
+         ```
+         tri-pull -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-workplace-services -d triWorkplaceServices -y 1`
+         ```
+      1. Vulcanize the files for using the following command:
+         ```
+         tri-vulcanize --url URL-for-your-TRIRIGA-instance --user your-userID --password your-password --view triview-workplace-services --component triview-workplace-services-dev.js --output triWorkplaceServices/triview-workplace-services.html`
+         ```
+      1. Deploy the vulcanized file using the following command:
+         ```
+         tri-deploy -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-workplace-services -d triWorkplaceServices --files triview-workplace-services.html -y -1
+         ```
    
 1. Add `triEsriMaps` tab to the `triBuilding` form:
    1. Navigate to the Form Builder (Tools > Form Builder).
@@ -134,7 +154,7 @@ This installation should take 1-2 hours to complete.
    1. Click on the `Upload View File` icon and choose the file you just edited.
    1. Click `Save & Close` link from the links at the top right.
 
-1. Bundle up the triLocate app by performing the following steps:  (You'll need NodeJS installed.  See https://nodejs.org for instructions.)
+1. Bundle up the triLocate app by performing the following steps:  (You'll need NodeJS installed.  See [https://nodejs.org](https://nodejs.org) for instructions.)
    1. Download and install the @tririga/tri-bundler tool using `npm install @tririga/tri-bundler -g`.
    1. Download and install the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`.
    1. Download and install the tri-deploy NodeJS tool using `npm install @tririga/tri-deploy -g`.
@@ -150,7 +170,7 @@ This installation should take 1-2 hours to complete.
       ```
       tri-deploy -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate -d triLocate --files triview-locate.js
       ```
-   1. If you have difficulties with the above tools, more information about them can be found at https://www.npmjs.com/package/@tririga/tri-pull, https://www.npmjs.com/package/@tririga/tri-bundler, and https://www.npmjs.com/package/@tririga/tri-deploy.  
+   1. If you have difficulties with the above tools, more information about them can be found at [https://www.npmjs.com/package/@tririga/tri-pull](https://www.npmjs.com/package/@tririga/tri-pull), [https://www.npmjs.com/package/@tririga/tri-bundler](https://www.npmjs.com/package/@tririga/tri-bundler), and [https://www.npmjs.com/package/@tririga/tri-deploy](https://www.npmjs.com/package/@tririga/tri-deploy).  
 
 
 
