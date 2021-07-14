@@ -34,7 +34,7 @@ This installation should take 1-2 hours to complete.
    1. Upload the edited file by clicking the `Upload View File` icon and picking the edited file.
    1. Click `Save & Close` to save the edited file.
    1. The Workplace Services production file can be vulcanized with this change now or later. If you don't wish to do this now, you can change the Production Filename to be the same as the Development Filename (i.e. set Production Filename to `triview-workplace-services-dev`) and click `Save & Close` on the web view.  If you want to do vulcaniztion now, then follow these steps:
-      1. Install NodeJS from [https://nodejs.org](https://nodejs.org).
+      1. Install NodeJS from <https://nodejs.org>.
       1. Download and install the @tririga/tri-vulcanize tool using `npm install @tririga/tri-vulcanize -g`.
       1. Download and install the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`.
       1. Download and install the tri-deploy NodeJS tool using `npm install @tririga/tri-deploy -g`.
@@ -155,7 +155,7 @@ This installation should take 1-2 hours to complete.
    1. Click on the `Upload View File` icon and choose the file you just edited.
    1. Click `Save & Close` link from the links at the top right.
 
-1. Bundle up the triLocate app by performing the following steps:  (You'll need NodeJS installed.  See [https://nodejs.org](https://nodejs.org) for instructions.)
+1. Bundle up the triLocate app by performing the following steps:  (You'll need NodeJS installed.  See <https://nodejs.org> for instructions.)
    1. Download and install the @tririga/tri-bundler tool using `npm install @tririga/tri-bundler -g`.
    1. Download and install the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`.
    1. Download and install the tri-deploy NodeJS tool using `npm install @tririga/tri-deploy -g`.
@@ -171,7 +171,7 @@ This installation should take 1-2 hours to complete.
       ```
       tri-deploy -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate -d triLocate --files triview-locate.js
       ```
-   1. If you have difficulties with the above tools, more information about them can be found at [https://www.npmjs.com/package/@tririga/tri-pull](https://www.npmjs.com/package/@tririga/tri-pull), [https://www.npmjs.com/package/@tririga/tri-bundler](https://www.npmjs.com/package/@tririga/tri-bundler), and [https://www.npmjs.com/package/@tririga/tri-deploy](https://www.npmjs.com/package/@tririga/tri-deploy).  
+   1. If you have difficulties with the above tools, more information about them can be found at <https://www.npmjs.com/package/@tririga/tri-pull>, <https://www.npmjs.com/package/@tririga/tri-bundler>, and <https://www.npmjs.com/package/@tririga/tri-deploy>.  
 
 
 
@@ -253,7 +253,7 @@ An example of how this file should be configured is displayed below. In this exa
 
 The username and password must be replaced with Esri Portal user created in step C.
 
-The TRIRIGA server requires a secure connection [HTTPS] to the Esri ArcGIS installation. If a self-signed certificate has been used in the ArcGIS installation, or if it has been signed by the DigiCert Root Certificate Authority or a less common certificate authority then you will need to follow the instructions for WebSphere Liberty or WebSphere Application Server below to allow TRIRIGA to trust the connection:
+The TRIRIGA server requires a secure connection (HTTPS) to the Esri ArcGIS installation. If a self-signed certificate has been used in the ArcGIS installation, or if it has been signed by the DigiCert Root Certificate Authority or a less common certificate authority then you will need to follow the instructions for WebSphere Liberty or WebSphere Application Server below to allow TRIRIGA to trust the connection:
 
 **WebSphere Liberty**:
 
