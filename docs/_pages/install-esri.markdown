@@ -30,18 +30,28 @@ The steps to set up Esri software to generate maps for TRIRIGA is an involved pr
 ### Links to Esri documentation
 
 #### Overviews
-ArcGIS Indoors  <https://www.esri.com/en-us/arcgis/products/arcgis-indoors/overview>
-ArcGIS Pro  <https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview>
-ArcGIS Enterprise  <https://www.esri.com/en-us/arcgis/products/arcgis-enterprise/overview>
-ArcGIS Online  <https://www.esri.com/en-us/arcgis/products/arcgis-online/overview>
+- ArcGIS Indoors
+  <https://www.esri.com/en-us/arcgis/products/arcgis-indoors/overview>
+- ArcGIS Pro
+  <https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview>
+- ArcGIS Enterprise
+  <https://www.esri.com/en-us/arcgis/products/arcgis-enterprise/overview>
+- ArcGIS Online
+  <https://www.esri.com/en-us/arcgis/products/arcgis-online/overview>
  
 #### Installation
-ArcGIS Enterprise Installation and Deployment  <https://enterprise.arcgis.com/en/documentation/install/>
-ArcGIS Enterprise QuickStart Guide  <https://www.esri.com/content/dam/esrisites/en-us/media/pdf/guides/quickstart-arcgis-enterprise.pdf>
-ArcGIS Enterprise Configure for ArcGIS Indoors   <https://doc.arcgis.com/en/indoors/viewer/configure-your-indoors-portal.htm>
-ArcGIS Online  Configure for ArcGIS Indoors  <https://doc.arcgis.com/en/indoors/viewer/configure-your-organization-for-indoors.htm>
- 
-How to Download and Install ArcGIS from myEsri   <https://support.esri.com/en/technical-article/000018698>
-ArcGIS Pro Download, Install, and Authorize   <https://pro.arcgis.com/en/pro-app/get-started/install-and-sign-in-to-arcgis-pro.htm>    (use for SaaS deployment)
-
-ArcGIS Pro Install a Single User License  <https://pro.arcgis.com/en/pro-app/get-started/authorize-and-start-arcgis-pro-with-a-single-use-license.htm>
+- ArcGIS Enterprise Installation and Deployment
+  <https://enterprise.arcgis.com/en/documentation/install/>
+- ArcGIS Enterprise QuickStart Guide
+  <https://www.esri.com/content/dam/esrisites/en-us/media/pdf/guides/quickstart-arcgis-enterprise.pdf>
+- ArcGIS Enterprise Configure for ArcGIS Indoors
+  <https://doc.arcgis.com/en/indoors/viewer/configure-your-indoors-portal.htm>
+- ArcGIS Online Configure for ArcGIS Indoors
+  <https://doc.arcgis.com/en/indoors/viewer/configure-your-organization-for-indoors.htm>
+- How to Download and Install ArcGIS from myEsri
+  <https://support.esri.com/en/technical-article/000018698>
+- ArcGIS Pro Download, Install, and Authorize
+  <https://pro.arcgis.com/en/pro-app/get-started/install-and-sign-in-to-arcgis-pro.htm>
+  (use for SaaS deployment)
+- ArcGIS Pro Install a Single User License
+  <https://pro.arcgis.com/en/pro-app/get-started/authorize-and-start-arcgis-pro-with-a-single-use-license.htm>
