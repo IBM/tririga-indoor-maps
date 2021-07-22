@@ -15,7 +15,7 @@ sidebar:
 
 ### Install and configure Esri software
 
-Follow these instructions to [install and configure Esri software]({{ site.url }}{{ site.baseurl }}/install-esri) to generate and serve indoor maps from CAD data.
+Follow these instructions to [install and configure Esri software]({{ site.url }}{{ site.baseurl }}/install-esri) to generate and serve indoor maps from CAD data. 
 
 ### Install and configure TRIRIGA software
 
