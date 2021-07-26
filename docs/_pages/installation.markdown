@@ -16,6 +16,5 @@ sidebar:
 Follow these instructions to [install and configure Esri software]({{ site.url }}{{ site.baseurl }}/install-esri) to generate and serve indoor maps from CAD data.
 
 ### Install and configure TRIRIGA software
--
-=======
+
 Follow these instructions to [install and configure TRIRIGA software]({{ site.url }}{{ site.baseurl }}/install-tririga) to enable TRIRIGA users to use Esri indoor maps.
