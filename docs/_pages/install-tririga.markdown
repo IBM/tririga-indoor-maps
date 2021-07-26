@@ -21,94 +21,94 @@ The installation may take 1-2 hours to complete.
 #### A) Installing Object Migration (OM) package and modifying out-of-the-box resources 
 1. Install the OM package `TRI_Esri_Indoor_Connector_vx.x.x.zip` to your TRIRIGA instance. This will create a new perceptive app named `triLocateMap`.
 
-2. Add new LocateMap app to Workplace Services UI
+1. Add new LocateMap app to Workplace Services UI
    To use this new app instead of the default Locate app, you must make the following change on WorkplaceServices webview files. Note, that by completing these steps, you will redirect traffic when you click on the `Locate` link on workplace services, the app displayed will be the new LocateMap app installed with the OM package capable of integrating with Esri Indoors.  
 
    1. Navigate to the Web View Designer (Tools > Web View Designer).
-   2. Click `triWorkplaceServices` web view.
-   3. Click `triview-workplace-services-dev.html` view file.
-   4. Click the `Download View File` icon.
-   5. Edit the downloaded `triview-workplace-services-devhtml` file and replace the line 
+   1. Click `triWorkplaceServices` web view.
+   1. Click `triview-workplace-services-dev.html` view file.
+   1. Click the `Download View File` icon.
+   1. Edit the downloaded `triview-workplace-services-devhtml` file and replace the line 
    with 
    {% raw %}```<tricore-url hidden raw-url="/p/web/locate" bind-url="{{locateMainUrl}}"></tricore-url>``` to ```<tricore-url hidden raw-url="/p/web/locateMap" bind-url="{{locateMainUrl}}"></tricore-url>```{% endraw %} 
-   6. Upload the edited file by clicking the `Upload View File` icon and picking the edited file.
-   7. Click `Save & Close` to save the edited file.
-   8. The Workplace Services production file can be vulcanized with this change now or later. If you don't wish to do this now, you can change the Production filename to be the same as the Development filename (i.e. set Production filename to `triview-workplace-services-dev`) and click `Save & Close` on the web view.  If you want to do vulcaniztion now, then follow these steps:
+   1. Upload the edited file by clicking the `Upload View File` icon and picking the edited file.
+   1. Click `Save & Close` to save the edited file.
+   1. The Workplace Services production file can be vulcanized with this change now or later. If you don't wish to do this now, you can change the Production filename to be the same as the Development filename (i.e. set Production filename to `triview-workplace-services-dev`) and click `Save & Close` on the web view.  If you want to do vulcaniztion now, then follow these steps:
       1. Install NodeJS from <https://nodejs.org>.
-      2. Download and install the @tririga/tri-vulcanize tool using `npm install @tririga/tri-vulcanize -g`.
-      3. Download and install the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`.
-      4. Download and install the tri-deploy NodeJS tool using `npm install @tririga/tri-deploy -g`.
-      5. Pull all the files for triview-workplace-services from your TRIRIGA instance using following command:
+      1. Download and install the @tririga/tri-vulcanize tool using `npm install @tririga/tri-vulcanize -g`.
+      1. Download and install the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`.
+      1. Download and install the tri-deploy NodeJS tool using `npm install @tririga/tri-deploy -g`.
+      1. Pull all the files for triview-workplace-services from your TRIRIGA instance using following command:
          ```
          tri-pull -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-workplace-services -d triWorkplaceServices -y 1`
          ```
-      6. Vulcanize the files for using the following command:
+      1. Vulcanize the files for using the following command:
          ```
          tri-vulcanize --url URL-for-your-TRIRIGA-instance --user your-userID --password your-password --view triview-workplace-services --component triview-workplace-services-dev.js --output triWorkplaceServices/triview-workplace-services.html`
          ```
-      7. Deploy the vulcanized file using the following command:
+      1. Deploy the vulcanized file using the following command:
          ```
          tri-deploy -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-workplace-services -d triWorkplaceServices --files triview-workplace-services.html -y -1
          ```
    
-3. Add `triEsriMaps` tab to the `triBuilding` form
+1. Add `triEsriMaps` tab to the `triBuilding` form
    1. Go to Tools > Form Builder .
-   2. Click the radio button for the `Location` module and the `triBuilding` form.
-   3. Click the `Revise` link from the links at the top right.
-   4. Click the `triEsriMapsBuildingTab` link.
-   5. Click `Copy Tab` link from the links at top right.
-   6. Select `triBuilding` as the Target Business Object and `triBuilding` as the Target form.
-   7. Click `Apply`.
-   8. Go back to Form Builder and click on the radio button for the `triBuilding` form.
-   9. Click the `Publish` link from the links at the top right.
+   1. Click the radio button for the `Location` module and the `triBuilding` form.
+   1. Click the `Revise` link from the links at the top right.
+   1. Click the `triEsriMapsBuildingTab` link.
+   1. Click `Copy Tab` link from the links at top right.
+   1. Select `triBuilding` as the Target Business Object and `triBuilding` as the Target form.
+   1. Click `Apply`.
+   1. Go back to Form Builder and click on the radio button for the `triBuilding` form.
+   1. Click the `Publish` link from the links at the top right.
 
-4. Add `triEsriMaps` tab to the `triFloor` form
+1. Add `triEsriMaps` tab to the `triFloor` form
    1. In the Form Builder with `Location` module selected, click the radio button for the `triFloor` form.
-   2. Click the `Revise` link from the links at the top right.
-   3. Click the `triEsriMapsFloorTab` link.
-   4. Click `Copy Tab` link from the links at top right.
-   5. Select `triFloor` as the Target Business Object and `triFloor` as the Target form.
-   6. Click `Apply`.
-   7. Go back to Form Builder and click on the radio button for the `triFloor` form.
-   8. Click the `Publish` link from the links at the top right.
+   1. Click the `Revise` link from the links at the top right.
+   1. Click the `triEsriMapsFloorTab` link.
+   1. Click `Copy Tab` link from the links at top right.
+   1. Select `triFloor` as the Target Business Object and `triFloor` as the Target form.
+   1. Click `Apply`.
+   1. Go back to Form Builder and click on the radio button for the `triFloor` form.
+   1. Click the `Publish` link from the links at the top right.
 
-5. Add a data source to the existing triLocate model
+1. Add a data source to the existing triLocate model
 In order to link the existing Locate app with the new LocateMap app, you must first add a data source to the existing triLocate model.
    1. Go to Tools > Model Designer and search for `triLocate`.
-   2. Add a new data source with the following values:
+   1. Add a new data source with the following values:
       1. Name: `Building Lookup`
-      2. Exposed Name: `buildingLookup`
-      3. Data Source Type: `Query`
-      4. Multiple Records: `TRUE`
-      5. Module: `Location`
-      6. Business Object: `triBuilding`
-      7. Query Name: `triBuilding - UX - LocateMap - Building`
-   3. Add a field on this data source:
+      1. Exposed Name: `buildingLookup`
+      1. Data Source Type: `Query`
+      1. Multiple Records: `TRUE`
+      1. Module: `Location`
+      1. Business Object: `triBuilding`
+      1. Query Name: `triBuilding - UX - LocateMap - Building`
+   1. Add a field on this data source:
       1. Name: `Building Record ID`
-      2. Exposed Name: `buildingRecordId`
-      3. Field Name: `Building Record ID`
-   4. Add another field on this data source:
+      1. Exposed Name: `buildingRecordId`
+      1. Field Name: `Building Record ID`
+   1. Add another field on this data source:
       1. Name: `Esri Map ID`
-      2. Exposed Name: `esriMapId`
-      3. Field Name: `Esri Map ID`
+      1. Exposed Name: `esriMapId`
+      1. Field Name: `Esri Map ID`
 
-6. Modify existing Locate UX app's location context component to open new LocateMap UX app.
+1. Modify existing Locate UX app's location context component to open new LocateMap UX app.
    1. Go to Tools > Web View Designer.
-   2. Click `triapp-location-context-v3` and `tricomp-location-context.js`.
-   3. Click the `Download View File` icon.
-   4. Edit the downloaded `tricomp-location-contextjs` file .
-   5. Search for this line of code `this.fire("select-building", {building: finalBuilding});`.
-   6. Add this line of code below it `this.fire("refresh-building", {newBuildingId: newBuilding._id});`.
-   7. Click the `Upload View File` icon and choose the file you just edited.
-   8. Click `Save & Close` link from the links at the top right.
+   1. Click `triapp-location-context-v3` and `tricomp-location-context.js`.
+   1. Click the `Download View File` icon.
+   1. Edit the downloaded `tricomp-location-contextjs` file .
+   1. Search for this line of code `this.fire("select-building", {building: finalBuilding});`.
+   1. Add this line of code below it `this.fire("refresh-building", {newBuildingId: newBuilding._id});`.
+   1. Click the `Upload View File` icon and choose the file you just edited.
+   1. Click `Save & Close` link from the links at the top right.
 
-7. Modify existing Locate UX app to open new LocateMap UX app.
+1. Modify existing Locate UX app to open new LocateMap UX app.
    1. Navigate to Tools > Web View Designer.
-   2. Click on `triLocate` and `trimain-locate.js`.
-   3. Click the `Download View File` icon.
-   4. Edit the downloaded `trimain-locatejs` file .
-   5. Search for `</style>`.
-   6. Add the following lines of code AFTER the `</style>` line:
+   1. Click on `triLocate` and `trimain-locate.js`.
+   1. Click the `Download View File` icon.
+   1. Edit the downloaded `trimain-locatejs` file .
+   1. Search for `</style>`.
+   1. Add the following lines of code AFTER the `</style>` line:
       ```
       <triplat-ds id="buildingLookup" name="buildingLookup" filtered-data="{{_buildingLookup}}">
          <triplat-query>
@@ -117,17 +117,17 @@ In order to link the existing Locate app with the new LocateMap app, you must fi
          </triplat-query>
       </triplat-ds>
       ```
-   7. Search for this line of code `listeners:`.
-   8. BEFORE the listeners section, add this line of code:
+   1. Search for this line of code `listeners:`.
+   1. BEFORE the listeners section, add this line of code:
       ```
       observers: [ "_checkEsriStatus(_buildingLookup)", ],
       ```
-   9. INSIDE the listeners section, add this line of code:
+   1. INSIDE the listeners section, add this line of code:
       ```
       'refresh-building': '_refreshBuilding',
       ```
       (Note, a comma has been added to the end of the above line, so add in the middle of the listeners.)
-   10. After the listeners section, add this block of code:
+   1. After the listeners section, add this block of code:
       ```
       _checkEsriStatus: function(e) { 
          if (this.overrideBuildingId != "" && this._buildingLookup[0] && this._buildingLookup[0].esriMapId) {
@@ -146,21 +146,21 @@ In order to link the existing Locate app with the new LocateMap app, you must fi
          this._checkEsriStatus(e);
       },
       ```
-   11. Click the `Upload View File` icon and choose the file you just edited.
-   12. Click `Save & Close` link from the links at the top right.
+   1. Click the `Upload View File` icon and choose the file you just edited.
+   1. Click `Save & Close` link from the links at the top right.
 
-8. Bundle up the triLocate app
+1. Bundle up the triLocate app
 **Note**: You must install NodeJS. See <https://nodejs.org> for instructions.
    1. Download and install the @tririga/tri-bundler tool using `npm install @tririga/tri-bundler -g`, the tri-pull NodeJS tool using `npm install @tririga/tri-pull -g`, and the tri-deploy NodeJS tool using `npm install @tririga/tri-deploy -g`.
-   2. Pull all the files for triview-locate from your TRIRIGA instance using following command:
+   1. Pull all the files for triview-locate from your TRIRIGA instance using following command:
       ```
       tri-pull -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate -d triLocate`
       ```
-   3. Bundle the files for triview-locate using the following command:
+   1. Bundle the files for triview-locate using the following command:
       ```
       tri-bundler --url URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate --component triview-locate-dev.js --output triLocate/triview-locate.js`
       ```
-   4. Deploy the bundled file using the following command:
+   1. Deploy the bundled file using the following command:
       ```
       tri-deploy -t URL-for-your-TRIRIGA-instance -u your-userID -p your-password -v triview-locate -d triLocate --files triview-locate.js
       ```
@@ -219,7 +219,7 @@ password="tririga-maps-secret"
 
 1. After installing the OM package for your TRIRIGA Maps integration, a new file named `tokenfetcher.config` will be created and needed to be populated with settings.
 
-2. To obtain the file from within TRIRIGA's dashboard, go to `Tools > System Setup > System > Class Loader > EsriIndoorMapsTokenFetcher > tokenfetcher.config` and click the download button.
+1. To obtain the file from within TRIRIGA's dashboard, go to `Tools > System Setup > System > Class Loader > EsriIndoorMapsTokenFetcher > tokenfetcher.config` and click the download button.
 
 An example of how this file should be configured is displayed below. In this example, the ESRI server (where the esri map is located) is defined as `https://your-mapping-server.ibm.com/portal`. (please note, if your server has an additional context root it must be included before `/portal` in the example below.)
 
@@ -242,7 +242,7 @@ An example of how this file should be configured is displayed below. In this exa
 </ProxyConfig>
 ```
 
-3. The username and password must be replaced with Esri Portal user created in step C.
+1. The username and password must be replaced with Esri Portal user created in step C.
 
 The TRIRIGA server requires a secure connection (HTTPS) to the Esri ArcGIS installation. If a self-signed certificate has been used in the ArcGIS installation, or if it has been signed by the DigiCert Root Certificate Authority or a less common certificate authority, then you will need to follow the instructions for WebSphere Liberty or WebSphere Application Server below to allow TRIRIGA to trust the connection.
 
@@ -255,11 +255,11 @@ You will likely have to add the root and intermediate certs of your Esri server 
 Use the following steps as a guide on how to add the certificates to the trusted store and restart the TRIRIGA server.
 
 1. Go to "cd c:\tririga\wlp\bin", find out which JRE/JDK is being used by "type run.bat", and look for the JAVA_HOME variable.
-2. Go to "cd c:\program files\java<jre/jdk>\jre\lib\security".
-3. Add the certificates obtained from the openssl command above to the trusted certificate authorities file (default password is changeit).
+1. Go to "cd c:\program files\java<jre/jdk>\jre\lib\security".
+1. Add the certificates obtained from the openssl command above to the trusted certificate authorities file (default password is changeit).
 `keytool -import -alias esri-certs -file your-mapping-server.com.cer -keystore cacerts`
-4. Check that the certificates were successfully installed in the trusted certificate authorities file (default password is changeit) - keytool -list -keystore cacerts.
-5. Go to "cd c:\tririga\wlp\bin", stop the server "shutdown.bat", and start the server "run.bat".
+1. Check that the certificates were successfully installed in the trusted certificate authorities file (default password is changeit) - keytool -list -keystore cacerts.
+1. Go to "cd c:\tririga\wlp\bin", stop the server "shutdown.bat", and start the server "run.bat".
 
 **WebSphere Application Server (WAS)**
 
@@ -270,13 +270,13 @@ To add certs to WAS, refer to this [Knowledge Center Document](https://www.ibm.c
 #### F) Adding model to security group
 The imported OM package contains a new model for the UX app.  Non-admin must be given proper access to this model.  To accomplish this, you can either create a new security group or modify an existing.  The following steps modify the `TRIRIGA Request Central - Fundamentals` security group to allow users, that have this group, to read, update, create, and delete the `triLocateMap` model.
 1.  From the TRIRIGA Main UI, go to `Tools > Adminstration > Security Manager`.
-2.  Click the `TRIRIGA Request Central - Fundamentals` security group.
-3.  In the displayed window, click `Access`.
-4.  Scroll down and expand the `Models` root, and select `triLocateMap`.
-5.  In the "Model Access" panel on the right, select `Read,Update,Create and Delete`.
-6.  Click Save & Close.
+1.  Click the `TRIRIGA Request Central - Fundamentals` security group.
+1.  In the displayed window, click `Access`.
+1.  Scroll down and expand the `Models` root, and select `triLocateMap`.
+1.  In the "Model Access" panel on the right, select `Read,Update,Create and Delete`.
+1.  Click Save & Close.
 
 ## Verifying the installation
 1. Launch the new enhanced Locate application `https://{hostname}:{port}/{context_root}/p/web/locatemap`
-2. Select the building that has Esri Indoor Maps configured. You will see the enhanced UI with the Esri map in the Locate App.
+1. Select the building that has Esri Indoor Maps configured. You will see the enhanced UI with the Esri map in the Locate App.
 

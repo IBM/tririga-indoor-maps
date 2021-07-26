@@ -18,14 +18,14 @@ The steps to set up Esri software to generate maps for TRIRIGA is an involved pr
 ### Steps
 
 1. Evaluate the CAD data that the customer has and determine if it is ready for import or requires more work ( same criteria as importing CAD data into TRIRIGA).
-2. Install Esri ArcGIS Indoors components that come with the Esri OEM on premise - must work with customer's IT department.
-3. Use Esri Tools to:
+1. Install Esri ArcGIS Indoors components that come with the Esri OEM on premise - must work with customer's IT department.
+1. Use Esri Tools to:
    * Load CAD data or import directly from TRIRIGA using ETL tool
    * Run automation to convert CAD data to GIS maps
    * Generate routing paths and validate them
    * Generate points of interest on the maps requires input from customer
    * Publish maps to the ArcGIS server and validate
-4. Install TRIRIGA connector for Esri ArcGIS and configure it to authenticate into the ArcGIS server.
+1. Install TRIRIGA connector for Esri ArcGIS and configure it to authenticate into the ArcGIS server.
 
 
 ### Links to Esri documentation

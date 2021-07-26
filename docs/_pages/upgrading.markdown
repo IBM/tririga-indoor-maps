@@ -18,7 +18,7 @@ sidebar:
 ### Importing Object Migration (OM) package 
 
 1.	Create new OM import package by selecting the [ tri-assistant-*.zip file]({{ site.github.repository_url }}/tree/master/om-package) provided in the OM package folder.
-2.	Validate and Import the new OM package.
+1.	Validate and Import the new OM package.
 
 
 ### HEADER

@@ -17,13 +17,13 @@ sidebar:
 
 Add `triEsriMaps` tab to the `triPeople` form:
    1. Go to Tools > Form Builder.
-   2. Click the radio button for the `triPeople` module and the `triEmployee` form.
-   3. Click the `Revise` link from the links at the top right.
-   4. Click on the `triEsriMapsPeopleTab` link.
-   5. Click `Copy Tab` link from the links at top right.
-   6. Select `triPeople` as the Target Business Object and `triEmployee` as the Target form. Click `Apply`.
-   7. Go back to the Form Builder and click on the radio button for the `triEmployee` form.
-   8. Click the `Publish` link from the links at the top right.
+   1. Click the radio button for the `triPeople` module and the `triEmployee` form.
+   1. Click the `Revise` link from the links at the top right.
+   1. Click on the `triEsriMapsPeopleTab` link.
+   1. Click `Copy Tab` link from the links at top right.
+   1. Select `triPeople` as the Target Business Object and `triEmployee` as the Target form. Click `Apply`.
+   1. Go back to the Form Builder and click on the radio button for the `triEmployee` form.
+   1. Click the `Publish` link from the links at the top right.
 
 
 #### B) Creating a TRIRIGA user account for a kiosk
@@ -42,4 +42,4 @@ Y Coordinate of Kiosk | The Y coordinate where the "You are here" dot must be pl
 
 To set up a kiosk with the Indoor Maps Locate app, either manually or scripted:
 1. Log in to TRIRIGA using the username and password created specifically for the kiosk.
-2. Navigate to the Locate app and select the building where the kiosk is located.
+1. Navigate to the Locate app and select the building where the kiosk is located.
