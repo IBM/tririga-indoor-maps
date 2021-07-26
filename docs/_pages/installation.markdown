@@ -4,14 +4,12 @@
 
 permalink: /installation/
 layout: home
-title: Installing Overview
+title: Installing
 description: Overview of the steps involved to enable users to interact with Esri indoor maps in TRIRIGA
 
 sidebar:
   nav: "docs"
 ---
-
-## Install Steps
 
 ### Install and configure Esri software
 
