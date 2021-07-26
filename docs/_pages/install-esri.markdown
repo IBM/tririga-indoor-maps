@@ -4,7 +4,7 @@
 
 permalink: /install-esri/
 layout: home
-title: Set up of Esri
+title: Setting up Esri
 description: Steps for downloading, installing, and configuring Esri software to generated maps for TRIRIGA.
 
 sidebar:
