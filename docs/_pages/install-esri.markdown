@@ -20,7 +20,7 @@ sidebar:
 1. Gather your floorplans and review the [ArcGIS Indoors Information Model](https://pro.arcgis.com/en/pro-app/2.7/help/data/indoors/arcgis-indoors-information-model.htm) requirements to ensure that your data is in good condition.
 1. Read the overview information of [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview) and [ArcGIS Enterprise](https://www.esri.com/en-us/arcgis/products/arcgis-enterprise/overview) to familiarize yourself with their capabilities.
 1. Depending on your entitlement you may obtain the Esri software and license from IBM Passport Advantage, or directly from your myEsri portal
- See the IBM Passport Advantage parts list [here]({{ site.url }}{{ site.baseurl }}/attachments/TRIRIGA Indoor Maps v11 Parts List.pdf).
+ See the IBM Passport Advantage parts list [here]({{ site.url }}{{ site.baseurl }}/assets/attachments/TRIRIGA%20Indoor%20Maps%20v11%20Parts%20List.pdf).
 1. To enable TRIRIGA Indoor Maps you will require the following components. 
     - ArcGIS Enterprise ([quick start guide](https://links.esri.com/ArcGISPro/2.7/quick_start_guide))
     - ArcGIS Pro ([quick start guide](https://links.esri.com/ArcGISPro/2.7/quick_start_guide))
