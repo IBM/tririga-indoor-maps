@@ -22,7 +22,7 @@ sidebar:
 1. Depending on your entitlement you may obtain the Esri software and license from IBM Passport Advantage, or directly from your myEsri portal
  See the IBM Passport Advantage parts list [here]({{ site.url }}{{ site.baseurl }}/assets/attachments/TRIRIGA%20Indoor%20Maps%20v11%20Parts%20List.pdf).
 1. To enable TRIRIGA Indoor Maps you will require the following components. 
-    - ArcGIS Enterprise ([quick start guide](https://links.esri.com/ArcGISPro/2.7/quick_start_guide))
+    - ArcGIS Enterprise ([quick start guide](https://www.esri.com/content/dam/esrisites/en-us/media/pdf/guides/quickstart-arcgis-enterprise.pdf))
     - ArcGIS Pro ([quick start guide](https://links.esri.com/ArcGISPro/2.7/quick_start_guide))
     - License Manager (comes with ArcGIS Enterprise)
     - TRIRIGA Connector for Esri ArcGIS Indoors ([quick start guide]({{ site.url }}{{ site.baseurl }}/install-tririga))
